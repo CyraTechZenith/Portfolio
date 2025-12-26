@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Global Metadata and styles for the site -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragati Sharma | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="layout">
+        <!-- Fixed sidebar/intro -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+
+                <div class="intro-block">
+                    <h1 class="hero-name">Pragati Sharma</h1>
+                    <p class="hero-title">Student Developer</p>
+                    <h2 class="hero-role">I’m learning to build impactful digital experiences.</h2>
+                </div>
+
+                <nav class="side-nav">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                </nav>
+
+                <!-- Social links -->
+                <div class="social-icons">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=1432pragga@gmail.com" title="Gmail"
+                        target="_blank">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Gmail">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/pragati-s-5553b5259" title="LinkedIn" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                            alt="LinkedIn">
+                    </a>
+
+                    <a href="https://github.com/CyraTechZenith" title="GitHub" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+                    </a>
+                </div>
+
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- About -->
+            <section id="about" class="about-section">
+
+                <p>
+                    I’m a <strong>Computer Science student</strong> with a strong interest in building efficient,
+                    well-structured software.
+                    I enjoy solving challenges that stretch my logical thinking 🧩 and constantly refine how I approach
+                    <strong>design, performance, and maintainability</strong> in code.
+                </p>
+
+                <p>
+                    My current focus is on mastering <strong>Java</strong> and developing <strong>Real-World
+                        Projects</strong> that strengthen both my technical foundation and my ability to think like an
+                    engineer ⚙️.
+                    I’m especially drawn to how small, consistent improvements can evolve into systems that scale
+                    reliably and make an actual difference.
+                </p>
+
+                <p>
+                    In the long run, I aim to grow into a <strong>Software Engineer</strong> who contributes to
+                    <strong>meaningful, scalable technology</strong> — the kind that improves how people work, connect,
+                    and create 🚀.
+                </p>
+
+            </section>
+
+            <!-- Projects -->
+            <section id="projects">
+                <h2>Projects</h2>
+                <!-- Project Cards -->
+                <div class="grid">
+
+                    <div class="card">
+                        <img src="assets/images/portfolio-preview.png" alt="Portfolio Preview">
+                        <div class="content">
+                            <h3>Portfolio Website</h3>
+                            <p>Personal website built from scratch — showcasing my skills, journey, and growth as a
+                                developer.</p>
+                            <a href="https://pragati-sharma.netlify.app" target="_blank" class="btn">
+                                View Project
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+
+                        <img src="https://placehold.co/600x400/111111/8b5cf6?text=Java+Dictionary+App"
+                            alt="Java Dictionary Preview">
+
+                        <div class="content">
+                            <h3>Java Dictionary App</h3>
+                            <p>An in-progress Java console app designed to store and search words efficiently using core
+                                concepts.</p>
+                            <a class="btn coming-soon">Coming Soon</a>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+
+                        <img src="https://placehold.co/600x400/111111/8b5cf6?text=Android+Study+Tracker"
+                            alt="Study Tracker Preview">
+
+                        <div class="content">
+                            <h3>Android Study Tracker (Upcoming)</h3>
+                            <p>A Java-based mobile app project in progress — designed to track daily study topics and
+                                progress.</p>
+                            <a class="btn coming-soon">Coming Soon</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Designed and coded with 💜 by <strong>Pragati Sharma</strong> in <strong>Visual Studio Code</strong>.
+            Built using <strong>HTML</strong>, <strong>CSS</strong>, and a stubborn love for clean code.
+        </p>
+    </footer>
+
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+
+    <script>
+        const glow = document.querySelector(".cursor-glow");
+        let timeout;
+        document.addEventListener("mousemove", (e) => {
+            glow.style.left = `${e.clientX}px`;
+            glow.style.top = `${e.clientY}px`;
+            glow.style.opacity = 0.6;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => glow.style.opacity = 0, 400);
+        });
+    </script>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".side-nav a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
