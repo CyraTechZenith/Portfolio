@@ -29,6 +29,13 @@ I’m focused on understanding the basics well, building clean layouts, and impr
 - Keep refining as I learn more  
 ---
 
+## Inspiration
+
+The layout and interaction patterns of this portfolio were inspired by Brittany Chiang’s personal website.
+This project was built independently as a learning exercise, with all code written from scratch.
+
+---
+
 ## Author
 
 **CyraTechZenith**
